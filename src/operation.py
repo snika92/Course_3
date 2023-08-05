@@ -26,3 +26,11 @@ class Operation:
         self.date = datetime.strptime(self.date[0], '%Y-%m-%d')
         self.date = self.date.strftime('%d.%m.%Y')
         return self.date
+
+    def mask_from_account(self):
+        """
+        Маскирует номер карты/счёта отправителя, возвращает в формате  XXXX XX** **** XXXX
+        (видны первые 6 цифр и последние 4, разбито по блокам по 4 цифры, разделенных пробелом).
+        """
+        self.from_account = str(self.from_account)
+        return f"{self.from_account[:4]} {self.from_account[4:6]}** **** {self.from_account[-4:]}"
