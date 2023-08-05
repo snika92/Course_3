@@ -12,3 +12,9 @@ if __name__ == '__main__':
     # Сортируем список по дате, от последней операции к первой и получаем последние 5 операций
     sorted_list_by_date = sorted(list_of_executed_operations, key=lambda x: x.date, reverse=True)
     latest_five = sorted_list_by_date[:5]
+
+    # Выводим последние 5 операций в требуемом формате
+    for item in latest_five:
+        print(f"""{item.format_date()} {item.description}
+    {item.from_card_name} {item.mask_from_account()} -> {item.to_card_name} {item.mask_to_account()}
+    {item.summa} {item.currency}\n""")
