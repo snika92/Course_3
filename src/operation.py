@@ -34,3 +34,11 @@ class Operation:
         """
         self.from_account = str(self.from_account)
         return f"{self.from_account[:4]} {self.from_account[4:6]}** **** {self.from_account[-4:]}"
+
+    def mask_to_account(self):
+        """
+        Маскирует номер карты/счёта получателя, возвращает в формате  **XXXX
+        (видны только последние 4 цифры номера счета).
+        """
+        self.to_account = str(self.to_account)
+        return f"**{self.to_account[-4:]}"
