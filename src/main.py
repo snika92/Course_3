@@ -16,5 +16,5 @@ if __name__ == '__main__':
     # Выводим последние 5 операций в требуемом формате
     for item in latest_five:
         print(f"""{item.format_date()} {item.description}
-    {item.from_card_name} {item.mask_from_account()} -> {item.to_card_name} {item.mask_to_account()}
-    {item.summa} {item.currency}\n""")
+{item.return_from_card_name()} {item.mask_from_account()} -> {item.to_card_name} {item.mask_to_account()}
+{item.summa} {item.currency}\n""")
