@@ -3,9 +3,9 @@ from datetime import datetime
 
 class Operation:
 
-    def __init__(self, id, description, summa, currency, date, to_card_name,
+    def __init__(self, op_id, description, summa, currency, date, to_card_name,
                  to_account, from_card_name=None, from_account=None):
-        self.id = id
+        self.op_id = op_id
         self.description = description
         self.summa = summa
         self.currency = currency
@@ -16,7 +16,7 @@ class Operation:
         self.from_account = from_account
 
     def __repr__(self):
-        return f'Operation({self.id}, {self.description}, {self.summa}, {self.currency}, ' \
+        return f'Operation({self.op_id}, {self.description}, {self.summa}, {self.currency}, ' \
                f'{self.date}, {self.to_card_name}, {self.to_account}, {self.from_card_name}, {self.from_account})'
 
     def format_date(self):
