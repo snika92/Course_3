@@ -29,7 +29,7 @@ def make_list_executed_operations(data):
     for item in data:
         if item:
             if item["state"] == "EXECUTED":
-                id = item["id"]
+                op_id = item["id"]
                 description = item["description"]
                 summa = item["operationAmount"]["amount"]
                 currency = item["operationAmount"]["currency"]["name"]
@@ -37,7 +37,7 @@ def make_list_executed_operations(data):
                 to_card_name, to_account = split_card_name_and_account(item["to"])
                 if "from" in item:
                     from_card_name, from_account = split_card_name_and_account(item["from"])
-                operation = Operation(id, description, summa, currency, date,
+                operation = Operation(op_id, description, summa, currency, date,
                                       to_card_name, to_account, from_card_name, from_account)
                 operations.append(operation)
     return operations
