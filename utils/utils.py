@@ -37,7 +37,10 @@ def make_list_executed_operations(data):
                 to_card_name, to_account = split_card_name_and_account(item["to"])
                 if "from" in item:
                     from_card_name, from_account = split_card_name_and_account(item["from"])
-                operation = Operation(op_id, description, summa, currency, date,
-                                      to_card_name, to_account, from_card_name, from_account)
+                    operation = Operation(op_id, description, summa, currency, date,
+                                          to_card_name, to_account, from_card_name, from_account)
+                else:
+                    operation = Operation(op_id, description, summa, currency, date,
+                                          to_card_name, to_account)
                 operations.append(operation)
     return operations
