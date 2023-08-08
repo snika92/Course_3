@@ -16,8 +16,9 @@ class Operation:
         self.from_account = from_account
 
     def __repr__(self):
-        return f'Operation({self.op_id}, {self.description}, {self.summa}, {self.currency}, ' \
-               f'{self.date}, {self.to_card_name}, {self.to_account}, {self.from_card_name}, {self.from_account})'
+        return f"""{self.format_date()} {self.description}
+{self.return_from_card_name()} {self.mask_from_account()} -> {self.to_card_name} {self.mask_to_account()}
+{self.summa} {self.currency}\n"""
 
     def format_date(self):
         """
